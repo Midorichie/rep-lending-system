@@ -1,9 +1,107 @@
 [project]
 name = "rep-lending-system"
+version = "2.0.0"
+description = "Enhanced reputation-based lending system with oracle integration"
+authors = ["midorichie <midorichie@example.com>"]
+clarity_version = 2
+epoch = 2.4
+boot_contracts = []
 
-[[contracts]]
-name = "reputation-lending"
+[contracts.reputation-lending]
 path = "contracts/reputation-lending.clar"
+depends_on = []
+
+[contracts.reputation-oracle]
+path = "contracts/reputation-oracle.clar"
+depends_on = []
+
+[repl]
+# Address for deploying contracts in REPL
+costs_version = 2
+parser_version = 2
+
+[repl.analysis]
+# Enable contract analysis
+check_trait_compliance = true
+check_checker_errors = true
+
+[[project.requirements]]
+contract_id = "SP000000000000000000002Q6VF78.pox-3"
 
 [devnet]
-# Add configuration if deploying locally for testing
+# Configuration for local devnet
+disable_bitcoin_explorer = false
+# working_dir = "tmp/devnet"
+# stacks_node_events_observers = ["host.docker.internal:8002"]
+# bitcoin_node_rpc_host = "0.0.0.0"
+# bitcoin_node_rpc_port = 18443
+# bitcoin_node_rpc_username = "devnet"
+# bitcoin_node_rpc_password = "devnet"
+# bitcoin_node_p2p_host = "0.0.0.0"
+# bitcoin_node_p2p_port = 18444
+# bitcoin_controller_block_time = 30_000
+# stacks_node_rpc_host = "0.0.0.0"
+# stacks_node_rpc_port = 20443
+# stacks_node_p2p_host = "0.0.0.0"
+# stacks_node_p2p_port = 20444
+# stacks_api_host = "0.0.0.0"
+# stacks_api_port = 3999
+# bitcoin_explorer_host = "0.0.0.0"
+# bitcoin_explorer_port = 8001
+# stacks_explorer_host = "0.0.0.0"
+# stacks_explorer_port = 8000
+
+# Account configurations for testing
+[[devnet.accounts]]
+name = "deployer"
+address = "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM"
+balance = 1000000000000
+
+[[devnet.accounts]]
+name = "wallet_1"
+address = "ST1SJ3DTE5DN7X54YDH5D64R3BCB6A2AG2ZQ8YPD5"
+balance = 1000000000000
+
+[[devnet.accounts]]
+name = "wallet_2"
+address = "ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG"
+balance = 1000000000000
+
+[[devnet.accounts]]
+name = "wallet_3"
+address = "ST2JHG361ZXG51QTKY2NQCVBPPRRE2KZB1HR05NNC"
+balance = 1000000000000
+
+[[devnet.accounts]]
+name = "wallet_4"
+address = "ST2NEB84ASENDXKYGJPQW86YXQCEFEX2ZQPG87ND"
+balance = 1000000000000
+
+[[devnet.accounts]]
+name = "wallet_5"
+address = "ST2REHHS5J3CERCRBEPMGH7921Q6PYKAADT7JP2VB"
+balance = 1000000000000
+
+[[devnet.accounts]]
+name = "wallet_6"
+address = "ST3AM1A56AK2C1XAFJ4115ZSV26EB49BVQ10MGCS0"
+balance = 1000000000000
+
+[[devnet.accounts]]
+name = "wallet_7"
+address = "ST3PF13W7Z0RRM42A8VZRVFQ75SV1K26RXEP8YGKJ"
+balance = 1000000000000
+
+[[devnet.accounts]]
+name = "wallet_8"
+address = "ST3NBRSFKX28FQ2ZJ1MAKX58HKHSDGNV5N7R21XCP"
+balance = 1000000000000
+
+[[devnet.accounts]]
+name = "wallet_9"
+address = "ST1HTBVD3JG9C05J7HBJTHGR0GGW7KXW28M5JS8QE"
+balance = 1000000000000
+
+[testnet]
+# Configuration for testnet deployment
+network = "testnet"

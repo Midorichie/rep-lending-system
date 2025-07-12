@@ -1,0 +1,9 @@
+[project]
+name = "rep-lending-system"
+
+[[contracts]]
+name = "reputation-lending"
+path = "contracts/reputation-lending.clar"
+
+[devnet]
+# Add configuration if deploying locally for testing
